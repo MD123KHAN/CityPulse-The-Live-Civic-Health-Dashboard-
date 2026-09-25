@@ -133,6 +133,8 @@ def create_tables() -> None:
     Base.metadata.create_all(bind=engine)
     logger.info("Database tables ready at: %s", _DB_PATH)
 
+init_db = create_tables
+
 
 # ---------------------------------------------------------------------------
 # Synchronous CRUD helpers (called via run_in_executor from async code)
@@ -349,6 +351,19 @@ async def async_count_complaints(city: Optional[str] = None) -> int:
 async def async_insert_event(data: dict[str, Any]) -> None:
     loop = asyncio.get_event_loop()
     await loop.run_in_executor(None, partial(db_insert_event, data))
+
+
+async def async_list_events(
+    category: Optional[str] = None,
+    ward_id: Optional[str] = None,
+    min_severity: float = 0.0,
+    limit: int = 100,
+) -> list[dict[str, Any]]:
+    """Asynchronously query persisted civic events from the SQLite database."""
+    loop = asyncio.get_event_loop()
+    return await loop.run_in_executor(
+        None, partial(db_list_events, category, ward_id, min_severity, limit)
+    )
 
 
 async def async_insert_ward_snapshot(data: dict[str, Any]) -> None:
