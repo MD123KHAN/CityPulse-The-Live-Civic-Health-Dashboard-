@@ -1,0 +1,8 @@
+[tool.poetry]
+name = "citypulse-backend"
+version = "1.0.0"
+description = "CityPulse — Live Civic Health Dashboard Backend"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

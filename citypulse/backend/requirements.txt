@@ -1,0 +1,22 @@
+# CityPulse Backend Dependencies
+# Install: pip install -r requirements.txt
+
+# Core
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+pydantic==2.10.3
+python-multipart==0.0.18
+
+# WebSocket support (included in uvicorn[standard])
+websockets==14.1
+
+# Database (SQLite via SQLAlchemy — no extra server needed)
+sqlalchemy==2.0.36
+
+# Optional LLM integrations (comment out if not needed)
+openai==1.57.2
+anthropic==0.40.0
+google-generativeai==0.8.3
+
+# Utilities
+python-dotenv==1.0.1
