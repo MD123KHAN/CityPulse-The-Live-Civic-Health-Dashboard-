@@ -1,0 +1,27 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Citypulse",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "md123khan.github",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://md123khan.github.io/CityPulse-The-Live-Civic-Health-Dashboard-/citypulse/frontend/mylogo.jpeg",
+      "type": "image/jpeg",
+      "sizes": "1600x533",
+      "isSquare": false,
+      "isPng": false,
+      "isWebp": false,
+      "isJpg": true,
+      "width": 1600,
+      "is512x512": false,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "Citypulse"
+}
