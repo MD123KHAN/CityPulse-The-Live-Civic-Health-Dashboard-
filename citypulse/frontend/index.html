@@ -4169,6 +4169,9 @@ function closeFooterModal() {
 function _footerEsc(e) {
   if (e.key === 'Escape') closeFooterModal()
 }
-</script>
+   if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('pwabuilder-sw.js');
+  }
+</script>   
 </body>
 </html>
